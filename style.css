@@ -3,26 +3,35 @@
   height: 100vw;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 10;
   background: white;
   overflow: hidden;
 }
 
 .loading-screen .bar{
-  height: 100vh;
   width: 0;
   position: absolute;
+  /* top: 50vh;
+  transform: translateY(-50%);
+  height: 50vh; */
+  height: 100vh;
   top: 0;
-  left: 0;
   background:#f9df48;
   overflow: hidden;
   /* transition: width 1.5s ease; */
 }
 
-/* .bar:hover{
-  width: 90vw;
-} */
+.loading, .loading .bar, .loading .bar .text-in{
+  left: 0;
+}
+
+.loaded, .loaded .bar, .loaded .bar .text-in{
+  right: 0;
+}
+
+.cleared{
+  display: none;
+}
 
 .loading-screen .text-out{
   font-family: 'Montserrat';
@@ -35,17 +44,40 @@
   font-size: 7vw;
   color:#f9df48;
   text-align: center;
+  display: none;
 }
 
 .loading-screen .bar .text-in{
   position: absolute;
-  top: 50vh;
+  top: 50%;
   transform: translateY(-50%);
-  left: 0;
   font-family: 'Montserrat';
   font-weight: 700;
   width: 100vw;
   font-size: 7vw;
   color: white;
   text-align: center;
+}
+
+.content{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content .question{
+  font-family: 'Montserrat';
+  font-size: 6vw;
+  width: 100vw;
+  text-align: center;
+}
+
+.content .question .word{
+  display: inline-block;
+  opacity: 0;
+}
+
+.content .question .end{
+  display: inline-block;
+  opacity: 0;
 }
