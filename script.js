@@ -1,6 +1,13 @@
 var reload = false;
 
 $(document).ready(function(){
+  var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=studio+ghibli+mountains&api_key=iE0MQAXbGcRzA6cXS04Okl5e8NzuMZUe&limit=1");
+  xhr.done(function(data) {
+    // const url = data.data[0].images.original.url;
+    const url =  `https://media.giphy.com/media/${data.data[0].id}/giphy.gif`;
+    console.log(url, data.data[0].id);
+    $('.gif-bg').css({backgroundImage: 'url('+url+')'});
+  });
   $('.loading-screen .text-out').fadeIn(1000);
   $(document).on('blur', ()=>{reload = true});
   $(document).on('focus', ()=>{if(reload){
@@ -63,5 +70,14 @@ function question(){
     easing: 'easeOutQuad',
     duration: 1000,
     delay: 1000
+  });
+  anime({
+    targets: '#question svg path',
+    // strokeDashoffset: [anime.setDashoffset, 0],
+    opacity: 0,
+    easing: 'easeInOutSine',
+    duration: 1500,
+    direction: 'alternate',
+    loop: true
   });
 }

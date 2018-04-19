@@ -1,0 +1,137 @@
+/* line 6, ../sass/style.scss */
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background: white;
+  overflow: hidden;
+}
+/* line 14, ../sass/style.scss */
+.loading-screen .bar {
+  width: 0;
+  position: absolute;
+  /* top: 50vh;
+  transform: translateY(-50%);
+  height: 50vh; */
+  height: 100vh;
+  top: 0;
+  background: url(../img/mountains.jpg) no-repeat center center fixed;
+  background-size: 100vw 100vh;
+  overflow: hidden;
+  /* transition: width 1.5s ease; */
+}
+/* line 29, ../sass/style.scss */
+.loading-screen.loading {
+  left: 0;
+}
+/* line 31, ../sass/style.scss */
+.loading-screen.loading .bar, .loading-screen.loading .text-in {
+  left: inherit;
+}
+/* line 35, ../sass/style.scss */
+.loading-screen.loaded {
+  right: 0;
+}
+/* line 37, ../sass/style.scss */
+.loading-screen.loaded .bar, .loading-screen.loaded .text-in {
+  right: inherit;
+}
+/* line 41, ../sass/style.scss */
+.loading-screen.cleared {
+  display: none;
+}
+/* line 44, ../sass/style.scss */
+.loading-screen .text {
+  font-family: 'Montserrat';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  font-weight: 700;
+  height: 10vw;
+  line-height: 10vw;
+  width: 100vw;
+  font-size: 8vw;
+  text-align: center;
+}
+/* line 56, ../sass/style.scss */
+.loading-screen .text.text-out {
+  color: #444;
+  background: url(../img/mountains.jpg) no-repeat center center fixed;
+  background-size: 100vw 100vh;
+  background-position: 0 5vw;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* line 64, ../sass/style.scss */
+.loading-screen .text.text-in {
+  color: white;
+}
+
+/* line 70, ../sass/style.scss */
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 74, ../sass/style.scss */
+.content #qmark {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+/* line 79, ../sass/style.scss */
+.content #qmark path {
+  stroke-dashoffset: 316.399px;
+}
+/* line 83, ../sass/style.scss */
+.content .question {
+  font-family: 'Montserrat';
+  font-size: 6vw;
+  width: 100vw;
+  text-align: center;
+}
+/* line 88, ../sass/style.scss */
+.content .question .word {
+  display: inline-block;
+  opacity: 0;
+}
+/* line 92, ../sass/style.scss */
+.content .question .end {
+  display: inline-block;
+  opacity: 0;
+}
+
+/* line 99, ../sass/style.scss */
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100vw;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
+
+/* line 111, ../sass/style.scss */
+body {
+  background-size: cover;
+}
+
+/* line 116, ../sass/style.scss */
+.clipper {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  text-align: center;
+  font-size: 9vw;
+  background: url(../img/mountains.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
