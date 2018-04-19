@@ -17,6 +17,7 @@
   height: 50vh; */
   height: 100vh;
   top: 0;
+  background: #444;
   overflow: hidden;
 }
 /* line 27, ../sass/style.scss */
