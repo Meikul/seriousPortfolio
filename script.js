@@ -1,7 +1,7 @@
 var reload = false;
 
 $(document).ready(function(){
-  var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=studio+ghibli+mountains&api_key=iE0MQAXbGcRzA6cXS04Okl5e8NzuMZUe&limit=1");
+  var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=mountain+timelapse&api_key=iE0MQAXbGcRzA6cXS04Okl5e8NzuMZUe&limit=1");
   xhr.done(function(data) {
     // const url = data.data[0].images.original.url;
     const url =  `https://media.giphy.com/media/${data.data[0].id}/giphy.gif`;
