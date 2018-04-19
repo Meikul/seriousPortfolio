@@ -1,13 +1,6 @@
 var reload = false;
 
 $(document).ready(function(){
-  var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=mountain+timelapse&api_key=iE0MQAXbGcRzA6cXS04Okl5e8NzuMZUe&limit=1");
-  xhr.done(function(data) {
-    // const url = data.data[0].images.original.url;
-    const url =  `https://media.giphy.com/media/${data.data[0].id}/giphy.gif`;
-    console.log(url, data.data[0].id);
-    $('.gif-bg').css({backgroundImage: 'url('+url+')'});
-  });
   $('.loading-screen .text-out').fadeIn(1000);
   $(document).on('blur', ()=>{reload = true});
   $(document).on('focus', ()=>{if(reload){

@@ -20,11 +20,9 @@ $image: url(../img/mountains.jpg);
     height: 100vh;
     top: 0;
     // background: $primary;
-    background:  $image no-repeat center center fixed;
-    background-size: 100vw 100vh;
-
+    // background:  $image no-repeat center center fixed;
+    // background-size: 100vw 100vh;
     overflow: hidden;
-    /* transition: width 1.5s ease; */
   }
   &.loading{
     left: 0;
@@ -55,11 +53,11 @@ $image: url(../img/mountains.jpg);
     text-align: center;
     &.text-out{
       color: $primary; // Fallback: assume this color ON TOP of image
-      background:  $image no-repeat center center fixed;
-      background-size: 100vw 100vh;
-      background-position: 0 5vw;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      // background:  $image no-repeat center center fixed;
+      // background-size: 100vw 100vh;
+      // background-position: 0 5vw;
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
     }
     &.text-in{
       color: white; // Fallback: assume this color ON TOP of image
@@ -94,33 +92,4 @@ $image: url(../img/mountains.jpg);
       opacity: 0;
     }
   }
-}
-
-video{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: 100vw;
-  height: auto;
-  z-index: -100;
-  transform: translate(-50%, -50%);
-}
-
-body {
-  // background:  url(https://thumbs.gfycat.com/DevotedTheseAntlion-size_restricted.gif) no-repeat center center fixed;
-  background-size: cover;
-}
-
-.clipper{
-  font-family: 'Montserrat';
-  font-weight: 700;
-  text-align: center;
-  font-size: 9vw;
-  background:  $image no-repeat center center fixed;
-  background-size: cover;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: black;
 }
