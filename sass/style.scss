@@ -1,7 +1,11 @@
 // $primary: #f9df48;
 $primary: #444;
 
-$image: url(../img/mountains.jpg);
+$image: url(https://i.imgur.com/WCha7hM.gif);
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800');
+
+$loadFont: 'Montserrat';
 
 .loading-screen{
   width: 100vw;
@@ -19,9 +23,9 @@ $image: url(../img/mountains.jpg);
     height: 50vh; */
     height: 100vh;
     top: 0;
-    background: $primary;
-    // background:  $image no-repeat center center fixed;
-    // background-size: 100vw 100vh;
+    // background: $primary;
+    background:  $image no-repeat center center fixed;
+    background-size: 100vw 100vh;
     overflow: hidden;
   }
   &.loading{
@@ -40,7 +44,7 @@ $image: url(../img/mountains.jpg);
     display: none;
   }
   .text{
-    font-family: 'Montserrat';
+    font-family: $loadFont;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -53,11 +57,11 @@ $image: url(../img/mountains.jpg);
     text-align: center;
     &.text-out{
       color: $primary; // Fallback: assume this color ON TOP of image
-      // background:  $image no-repeat center center fixed;
-      // background-size: 100vw 100vh;
-      // background-position: 0 5vw;
-      // -webkit-background-clip: text;
-      // -webkit-text-fill-color: transparent;
+      background:  $image no-repeat center center fixed;
+      background-size: 100vw 100vh;
+      background-position: 0 5vw;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     &.text-in{
       color: white; // Fallback: assume this color ON TOP of image
@@ -79,7 +83,7 @@ $image: url(../img/mountains.jpg);
     }
   }
   .question{
-    font-family: 'Montserrat';
+    font-family: $loadFont;
     font-size: 6vw;
     width: 100vw;
     text-align: center;

@@ -1,14 +1,15 @@
 var reload = false;
 
 $(document).ready(function(){
-  $('.loading-screen .text-out').fadeIn(1000);
-  $(document).on('blur', ()=>{reload = true});
-  $(document).on('focus', ()=>{if(reload){
-    reload = false;
-    location.reload();
-  }});
-  if($('.loading').length) load();
-  else question();
+  // $('.loading-screen .text-out').fadeIn(1000);
+  // if($('.loading').length) load();
+  // else question();
+  const $bar = $('.bar');
+  $('.loading').on('mousemove', function(e){
+    let pct = e.pageX/$(document).outerWidth();
+    pct = pct*100;
+    $bar.css({width: pct+'vw'});
+  });
 });
 
 function load(){
