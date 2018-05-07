@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:800");
-/* line 10, ../sass/style.scss */
+@import url("https://fonts.googleapis.com/css?family=Shrikhand");
+/* line 23, ../sass/style.scss */
 .loading-screen {
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   z-index: 10;
-  background: white;
+  background: #eee;
   overflow: hidden;
 }
-/* line 18, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 .loading-screen .bar {
   width: 0;
   position: absolute;
@@ -18,88 +18,100 @@
   height: 50vh; */
   height: 100vh;
   top: 0;
-  background: url(https://i.imgur.com/WCha7hM.gif) no-repeat center center fixed;
+  background: url(http://38.media.tumblr.com/6e6b88b61a524fa9198819cd83ca08ac/tumblr_nlubhi8fae1s4fz4bo1_500.gif) no-repeat center center fixed;
   background-size: 100vw 100vh;
   overflow: hidden;
 }
-/* line 31, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 .loading-screen.loading {
   left: 0;
 }
-/* line 33, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 .loading-screen.loading .bar, .loading-screen.loading .text-in {
   left: inherit;
 }
-/* line 37, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .loading-screen.loaded {
   right: 0;
 }
-/* line 39, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .loading-screen.loaded .bar, .loading-screen.loaded .text-in {
   right: inherit;
 }
-/* line 43, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 .loading-screen.cleared {
   display: none;
 }
-/* line 46, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 .loading-screen .text {
-  font-family: "Montserrat";
+  font-family: "Shrikhand";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  font-weight: 700;
+  font-weight: bold;
   height: 10vw;
   line-height: 10vw;
   width: 100vw;
   font-size: 8vw;
   text-align: center;
 }
-/* line 58, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 .loading-screen .text.text-out {
-  color: #444;
-  background: url(https://i.imgur.com/WCha7hM.gif) no-repeat center center fixed;
+  color: #eee;
+  background: url(http://38.media.tumblr.com/6e6b88b61a524fa9198819cd83ca08ac/tumblr_nlubhi8fae1s4fz4bo1_500.gif) no-repeat center center fixed;
   background-size: 100vw 100vh;
   background-position: 0 5vw;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* line 66, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .loading-screen .text.text-in {
-  color: white;
+  color: #eee;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
+.draw-area {
+  border: 2px solid #cecece;
+  height: 500px;
+  width: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #f0f0f0;
+}
+
+/* line 96, ../sass/style.scss */
 .content {
   position: fixed;
   top: 0;
   left: 0;
 }
-/* line 76, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .content #qmark {
   width: 500px;
   height: 500px;
   margin: auto;
   margin-top: 50px;
 }
-/* line 81, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 .content #qmark path {
   stroke-dashoffset: 316.399px;
 }
-/* line 85, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 .content .question {
-  font-family: "Montserrat";
+  font-family: "Shrikhand";
   font-size: 6vw;
   width: 100vw;
   text-align: center;
 }
-/* line 90, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 .content .question .word {
   display: inline-block;
   opacity: 0;
 }
-/* line 94, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 .content .question .end {
   display: inline-block;
   opacity: 0;
