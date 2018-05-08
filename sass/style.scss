@@ -93,6 +93,14 @@ $loadFont: 'Shrikhand';
   background: #f0f0f0;
 }
 
+.clear-draw{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-500px, calc(-250px - 100%));
+  font-size: 30px;
+}
+
 .content{
   position: fixed;
   top: 0;

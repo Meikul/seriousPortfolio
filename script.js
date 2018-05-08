@@ -1,12 +1,19 @@
 var reload = false;
 
 $(document).ready(function() {
-  $(document)
   $('.loading-screen .text-out').fadeIn(1000);
   if($('.loading').length) load();
   else question();
 
+  // $(document).keypress(function(e){
+  //   if(e.which == 32) location.reload();
+  // });
+
   // hideLoad();
+
+  $('.clear-draw').click((e) => {
+    drawing.clear($('.draw-area').get(0));
+  });
 
   drawing.init();
 });
@@ -90,15 +97,13 @@ function question() {
   });
 }
 
-
-var drawArea = $('.draw-area');
-
 var drawing = (function() {
   var init = () => {
     var $drawArea = $('.draw-area');
     $drawArea.each((i, elem) => {
       elem.drawPoints = [];
       elem.isDrawing = false;
+      elem.wasDrawing = false;
       console.log(elem);
     });
     $drawArea.on('mousedown', _startDrawing);
@@ -107,8 +112,9 @@ var drawing = (function() {
     $drawArea.on('mouseleave', _stopDrawing);
   };
 
-  var clear = () => {
-
+  var clear = (areaElem) => {
+    areaElem.drawPoints = [];
+    _draw(areaElem);
   };
 
   var _startDrawing = (e) => {
@@ -124,18 +130,19 @@ var drawing = (function() {
     var $area = $(e.target);
     var areaElem = $area.get(0);
     if(areaElem.isDrawing){
+      var traceTo = areaElem.wasDrawing;
       var x = e.pageX - $area.offset().left;
       var y = e.pageY - $area.offset().top;
       x /= $area.width();
       y /= $area.height();
-      var traceTo = areaElem.isDrawing;
       areaElem.drawPoints.push({x, y, traceTo});
-      _draw($area);
+      _draw(areaElem);
     }
+    areaElem.wasDrawing = areaElem.isDrawing;
   };
 
-  var _draw = ($area) => {
-    var areaElem = $area.get(0);
+  var _draw = (areaElem) => {
+    var $area = $(areaElem);
     var context = areaElem.getContext("2d");
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     context.strokeStyle = "#3ec7d7";
@@ -145,8 +152,6 @@ var drawing = (function() {
     areaElem.drawPoints.forEach((point, i) => {
       const x = point.x * $area.width();
       const y = point.y * $area.height();
-      // const x = point.x;
-      // const y = point.y;
       if (!point.traceTo) {
         context.moveTo(x, y);
       } else if (point.traceTo) {
