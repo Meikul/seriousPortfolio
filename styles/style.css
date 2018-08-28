@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css?family=Shrikhand|Roboto+Mono");
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background: #efefef;
+  overflow: hidden;
+}
+
+.loading-screen .bar {
+  width: 0;
+  position: absolute;
+  /* top: 50vh;
+    transform: translateY(-50%);
+    height: 50vh; */
+  height: 100vh;
+  top: 0;
+  background: #aaa no-repeat center center fixed;
+  background-size: 100vw 100vh;
+  overflow: hidden;
+}
+
+.loading-screen.loading {
+  left: 0;
+}
+
+.loading-screen.loading .bar, .loading-screen.loading .text-in {
+  left: inherit;
+}
+
+.loading-screen.loaded {
+  right: 0;
+}
+
+.loading-screen.loaded .bar, .loading-screen.loaded .text-in {
+  right: inherit;
+}
+
+.loading-screen.cleared {
+  display: none;
+}
+
+.loading-screen .text {
+  font-family: "Shrikhand";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  font-weight: bold;
+  height: 10vw;
+  line-height: 10vw;
+  width: 100vw;
+  font-size: 8vw;
+  text-align: center;
+}
+
+.loading-screen .text.text-out {
+  color: white;
+  background: #aaa no-repeat center center fixed;
+  background-size: 100vw 100vh;
+  background-position: 0 5vw;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loading-screen .text.text-in {
+  color: #efefef;
+}
+
+.draw-area {
+  border: 2px solid #cecece;
+  height: 500px;
+  width: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #f0f0f0;
+}
+
+.clear-draw {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-500px, calc(-250px - 100%));
+          transform: translate(-500px, calc(-250px - 100%));
+  font-size: 30px;
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content #qmark {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.content #qmark path {
+  stroke-dashoffset: 316.399px;
+}
+
+.content .question {
+  font-family: "Shrikhand";
+  font-size: 6vw;
+  width: 100vw;
+  text-align: center;
+}
+
+.content .question .word {
+  display: inline-block;
+  opacity: 0;
+}
+
+.content .question .end {
+  display: inline-block;
+  opacity: 0;
+}
+
+body {
+  background: #eee;
+}
+
+.load-select {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100vw;
+  height: 60px;
+  max-width: 1100px;
+  margin: auto;
+  top: 75vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'Roboto Mono';
+}
+
+.load-select .option {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  padding: 8px;
+}
+
+.load-select .option a {
+  position: relative;
+  color: #333;
+}
+
+.load-select .option a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  height: 1px;
+  width: 0;
+  background: #333;
+  -webkit-transition: all ease 0.1s;
+  transition: all ease 0.1s;
+}
+
+.load-select .option a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.img-preview {
+  position: absolute;
+  top: 36vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 700px;
+  overflow: hidden;
+  max-width: 950px;
+}
+
+.img-preview img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

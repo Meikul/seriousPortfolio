@@ -5,11 +5,14 @@ $(document).ready(function() {
   if($('.loading').length) load();
   else question();
 
-  // $(document).keypress(function(e){
-  //   if(e.which == 32) location.reload();
-  // });
-
+  $(document).keypress(function(e){
+    if(e.which == 32) location.reload();
+  });
+  
   // hideLoad();
+
+  loadSelect();
+
 
   $('.clear-draw').click((e) => {
     drawing.clear($('.draw-area').get(0));
@@ -17,6 +20,26 @@ $(document).ready(function() {
 
   drawing.init();
 });
+
+function loadSelect() {
+  var $select = $('.load-select');
+  var $opts = $select.find('a');
+  $opts.on('mouseenter', function (e) {
+    const $target = $(e.target);
+    if(!$target.hasClass('active')){
+      const src = $target.attr('data-src');
+      $select.find('.active').removeClass('active');
+      $(e.target).addClass('active');
+      $('.img-preview img').attr('src', src);
+    }
+  });
+  $opts.on('click', function (e) {
+    const src = $(e.target).attr('data-src');
+    $('.loading-screen .bar').css('background-image', 'url(\''+src+'\')');
+    $('.loading-screen .text.text-out').css('background-image', 'url(\''+src+'\')');
+    load();
+  })
+}
 
 function hideLoad() {
   $('.loading-screen').hide();
@@ -34,6 +57,10 @@ function dragBar() {
 }
 
 function load() {
+  var $loadScr = $('.loading-screen');
+  $loadScr.removeClass('loaded');
+  $loadScr.removeClass('cleared');
+  $loadScr.addClass('loading');
   var loadingWidths = [10, 20, 20, 50, 60, 60, 64, 64, 80, 80, 100];
   var loadAnim = anime.timeline({
     targets: '.loading-screen .bar',
@@ -65,7 +92,9 @@ function clearLoadscr() {
     delay: 1000
   }).finished.then(function() {
     $loadScr.addClass('cleared');
-    question();
+    $loadScr.css('width', '');
+    $loadScr.find('.bar').css('width','');
+    // question();
   });
 }
 
@@ -147,7 +176,7 @@ var drawing = (function() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     context.strokeStyle = "#3ec7d7";
     context.lineJoin = "round";
-    context.lineWidth = 2;
+    context.lineWidth = 3;
     var path = context.beginPath();
     areaElem.drawPoints.forEach((point, i) => {
       const x = point.x * $area.width();
