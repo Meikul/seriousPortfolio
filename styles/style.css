@@ -144,7 +144,7 @@ body {
   height: 60px;
   max-width: 1100px;
   margin: auto;
-  top: 75vh;
+  top: 85vh;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -190,7 +190,6 @@ body {
           transform: translate(-50%, -50%);
   width: 100vw;
   height: 700px;
-  overflow: hidden;
   max-width: 950px;
 }
 
@@ -199,6 +198,6 @@ body {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 100%;
+  max-width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

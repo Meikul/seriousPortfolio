@@ -9,7 +9,7 @@ $(document).ready(function() {
     if(e.which == 32) location.reload();
   });
   
-  // hideLoad();
+  hideLoad();
 
   loadSelect();
 
