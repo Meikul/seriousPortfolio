@@ -198,6 +198,6 @@ body {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  max-width: 100%;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
