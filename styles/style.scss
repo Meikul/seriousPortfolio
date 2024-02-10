@@ -20,9 +20,10 @@ $loadingBg: #aaa;
 
 
 @import url('https://fonts.googleapis.com/css?family=Shrikhand|Roboto+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 
-$loadFont: 'Shrikhand';
+$loadFont: 'Anton';
 
 .loading-screen{
   width: 100vw;
@@ -67,16 +68,16 @@ $loadFont: 'Shrikhand';
     transform: translateY(-50%);
     left: 0;
     font-weight: bold;
-    height: 10vw;
-    line-height: 10vw;
+    // height: 10vw;
+    // line-height: 10vw;
     width: 100vw;
-    font-size: 8vw;
+    font-size: 25vw;
     text-align: center;
     &.text-out{
       color: white; // Fallback: assume this color ON TOP of image
       background:  $loadingBg no-repeat center center fixed;
       background-size: 100vw 100vh;
-      background-position: 0 5vw;
+      background-position: center;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
